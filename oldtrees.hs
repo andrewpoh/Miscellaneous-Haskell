@@ -1,3 +1,5 @@
+-- From 13 August 2004
+
 module Trees (
 	Tree(), isLeaf, getLeafVal,
 	isNode, getNodeFunc, getNodeLeft, getNodeRight,
