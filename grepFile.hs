@@ -7,7 +7,9 @@ import qualified Data.Text.Lazy as T
 main :: IO ()
 main = do
 	args <- getArgs
-	if length args < 2 then putStrLn "Usage: grepFile fileName pattern"
+	progName <- getProgName
+	if length args < 2 then putStrLn
+		("Usage: "++ progName ++ " fileName pattern")
 	else do
 		let fileName = args !! 0
 		let pattern = args !! 1
