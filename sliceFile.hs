@@ -4,10 +4,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 import Control.Monad
 import Data.Maybe
-import System.Directory
 import System.Environment
 import System.Exit
 import qualified Data.ByteString.Lazy as B
+import qualified Data.List as L
 import qualified Data.Text.Lazy.Encoding as E
 import qualified Data.Text.Lazy as T
 
@@ -62,4 +62,4 @@ keepLines_ y@(ls, r0) =
 	(l:ls, r2)
 
 nTimes :: Int -> (a->a) -> a -> a
-nTimes n f x = iterate f x !! n
+nTimes n f x = L.foldl' (\a b-> f a) x (L.replicate n ())
